@@ -17,7 +17,8 @@ export default function Home() {
       file,
       name: file.name,
       size: file.size,
-      tags: []
+      tags: [],
+      path: `local:${file.name}` // Ruta local del archivo
     }));
     setImages(imagesWithTags);
   };
@@ -29,7 +30,8 @@ export default function Home() {
       name: url,
       size: null,
       tags: [],
-      url
+      url,
+      path: url // Ruta de la URL
     }));
     setImages(imagesWithTags);
   };
