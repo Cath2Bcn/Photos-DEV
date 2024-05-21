@@ -34,3 +34,24 @@ export async function POST(request) {
       });
     }
 }
+export async function GET(request) {
+  try {
+      const client = await clientPromise;
+      const db = client.db("photoproject");
+
+      const collection = db.collection("images");
+      const images = await collection.find({}).toArray();
+
+      // Here we directly return a response with status 200 and the images as JSON
+      return NextResponse.json(images);
+
+  } catch (error) {
+      // Here we directly return a response with status 500
+      return new NextResponse(JSON.stringify({ message: error.message }), {
+          status: 500,
+          headers: {
+              'Content-Type': 'application/json'
+          }
+      });
+  }
+}

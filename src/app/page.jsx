@@ -5,6 +5,7 @@ import ImageUploader from './components/ImageUploader';
 import ImageTagger from './components/ImageTagger';
 import UploadButton from './components/UploadButton';
 import UrlTextarea from './components/UrlTextarea';
+import { toBase64 } from './utils/toBase64';
 
 export default function Home() {
   const [images, setImages] = useState([]);
@@ -33,12 +34,6 @@ export default function Home() {
     setImages(imagesWithTags);
   };
 
-  const toBase64 = file => new Promise((resolve, reject) => {
-    const reader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.onload = () => resolve(reader.result);
-    reader.onerror = error => reject(error);
-  });
 
   const handleAddTag = (index, tag) => {
     if (tag.trim() === '') return;
