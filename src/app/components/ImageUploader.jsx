@@ -1,3 +1,5 @@
+//Bottom to select images files
+
 import React from 'react';
 
 const ImageUploader = ({ onImageUpload }) => {

@@ -1,3 +1,5 @@
+//Bottom Upload images to server
+
 import React from 'react';
 
 const UploadButton = ({ onUpload, isDisabled }) => {

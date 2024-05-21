@@ -1,3 +1,5 @@
+//To add tags to images
+
 import React from 'react';
 
 const ImageTagger = ({ image, index, onAddTag }) => {
